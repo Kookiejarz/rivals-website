@@ -52,8 +52,14 @@ nav .dropdown-menu .nav-link{color:rgba(0,0,0,0.6)!important;} /* Maintain Downd
 
 /* Sizes */
 
+.bloc-xl{
+	padding:150px 20px;
+}
 .bloc-md{
 	padding:50px 20px;
+}
+.bloc-sm{
+	padding:20px;
 }
 
 /* = Full Screen Blocs 
@@ -191,9 +197,6 @@ nav .dropdown-menu .nav-link{color:rgba(0,0,0,0.6)!important;} /* Maintain Downd
 /* = NavBar
 -------------------------------------------------------------- */
 
-.navbar-dark .nav .dropdown-menu .nav-link{
-	color: rgb(64, 64, 64);
-}
 /* Navbar Icon */
 .svg-menu-icon{
 	fill: none;
@@ -269,11 +272,24 @@ button{
 	outline: none!important;
 }
 
+.btn-rd{
+	border-radius: 40px;
+}
+.btn-wire{
+	background:transparent!important;
+	border:2px solid transparent;
+}
+.btn-wire:hover{
+	background:transparent!important;
+	border:2px solid transparent;
+}
 
 
 
 
 
+/* = Cards
+-------------------------------------------------------------- */
 .card-sq, .card-sq .card-header, .card-sq .card-footer{
 	border-radius:0;
 }
@@ -335,6 +351,82 @@ button{
 	stroke-width: 2px;
 	fill-rule: evenodd;
 	stroke-linecap:round;
+}
+
+/* Horizontal Scroll Container */
+.blocs-horizontal-scroll-container{
+	position:relative;
+}
+.blocs-horizontal-scroll-area{
+	display:flex;
+	overflow-x:auto;
+	align-items:flex-start;
+	gap:20px;
+}
+.blocs-horizontal-scroll-area > *{
+	flex-shrink:0;
+	max-width:100%;
+}
+.blocs-horizontal-scroll-area::-webkit-scrollbar{
+	display:none;
+}
+.blocs-horizontal-scroll-control{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	z-index:1;
+	display:flex;
+	text-align:center;
+	border:0;
+	margin:0 30px;
+}
+.blocs-scroll-control-next{
+	right:0;
+}
+.blocs-round-btn{
+	background:rgba(0,0,0,0.15);
+	border-radius:100%;
+	padding:12px;
+	opacity:0;
+	cursor:pointer;
+	transform:scale(0.5);
+	backdrop-filter:blur(20px);
+	-webkit-backdrop-filter:blur(20px);
+	transition:opacity .50s ease,transform .50s ease;
+}
+.blocs-horizontal-scroll-container:hover .blocs-round-btn,.blocs-horizontal-scroll-container.show-controls .blocs-round-btn{
+	opacity:1;
+	transform:scale(1.0);
+}
+.blocs-round-btn:active{
+	background:rgba(0,0,0,0.3);
+	transform:scale(0.9)!important;
+	transition:transform .30s ease,background .50s ease;
+}
+.compact-blocs-controls .blocs-round-btn{
+	padding:2px;
+	width:30px;
+	height: 30px;
+}
+.compact-blocs-controls .blocs-round-btn svg{
+	width:14px;
+	height:14px;
+}
+.compact-blocs-controls .blocs-horizontal-scroll-control{
+	margin:0 20px;
+}
+.horizontal-scroll-icon{
+	fill:none;
+	stroke:#fff;
+	stroke-width:4px;
+	fill-rule:evenodd;
+	stroke-linecap:round;
+}
+.hide-left-control > .blocs-scroll-control-prev, .hide-right-control > .blocs-scroll-control-next{
+	opacity:0!important;
+}
+.show-controls > .blocs-scroll-control-prev, .show-controls > .blocs-scroll-control-next{
+	opacity:1!important;
 }
 
 /* = Custom Styling
@@ -456,6 +548,17 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 .dark-icon{
 	opacity:0.8;
 }
+.link-style{
+	width:44.81%;
+}
+.navbar-logo{
+	text-transform:none;
+	text-decoration:none;
+	font-size:20px;
+}
+.blocs-card-width{
+	width:25%;
+}
 
 /* = Colour
 -------------------------------------------------------------- */
@@ -476,6 +579,8 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	--swatch-var-502:rgba(0,0,0,0.50);
 	
 	--swatch-var-4580:rgba(4,51,255,1.00);
+	
+	--swatch-var-4593:rgba(255,255,255,0.5);
 	
 }
 
@@ -506,9 +611,20 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 .tc-458{
 	color:var(--swatch-var-458)!important;
 }
+.tc-4593{
+	color:var(--swatch-var-4593)!important;
+}
 
 /* Button colour styles */
 
+.btn-c-458{
+	background:var(--swatch-var-458);
+	color:#FFFFFF!important;
+}
+.btn-c-458:hover{
+	background:#000000!important;
+	color:#FFFFFF!important;
+}
 .btn-c-7096{
 	background:var(--swatch-var-7096);
 	color:rgba(0,0,0,.5)!important;
@@ -517,18 +633,32 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	background:#00C9CC!important;
 	color:rgba(0,0,0,.5)!important;
 }
+.wire-btn-c-458{
+	color:var(--swatch-var-458)!important;
+	border-color:var(--swatch-var-458)!important;
+}
 
 /* Link colour styles */
 
-.ltc-4279{
-	color:var(--swatch-var-4279)!important;
+.ltc-458{
+	color:var(--swatch-var-458)!important;
 }
-.ltc-4279:hover{
-	color:#CCCCCC!important;
+.ltc-458:hover{
+	color:#000000!important;
 }
 
 /* Bloc image backgrounds */
 
+.bg-Staring-Down-Hurricane-Florence{
+	background-image:url("img/Staring_Down_Hurricane_Florence.jpg");
+	background-image: -webkit-image-set(url("img/Staring_Down_Hurricane_Florence.webp") 1x,
+url("img/Staring_Down_Hurricane_Florence.webp") 2x);background-image: image-set(url("img/Staring_Down_Hurricane_Florence.jpg") 1x,
+url("img/Staring_Down_Hurricane_Florence.jpg") 2x,url("img/Staring_Down_Hurricane_Florence.webp") 1x,
+url("img/Staring_Down_Hurricane_Florence.webp") 2x);
+}
+
+/* = Custom Bric Data
+-------------------------------------------------------------- */
 
 
 
@@ -644,6 +774,9 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	.price-card{
 		margin-bottom:20px;
 	}
+	.blocs-card-width{
+		width:50%;
+	}
 	
 }
 
@@ -689,6 +822,9 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	}
 	.price-card{
 	}
+	.blocs-card-width{
+		width:50%;
+	}
 	
 }
 
@@ -714,6 +850,12 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	}
 	.page-title{
 		font-size:30px;
+	}
+	.navbar-logo{
+		font-size:18px;
+	}
+	.blocs-card-width{
+		width:100%;
 	}
 	
 }
