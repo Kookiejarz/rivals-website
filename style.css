@@ -288,8 +288,6 @@ button{
 
 
 
-/* = Cards
--------------------------------------------------------------- */
 .card-sq, .card-sq .card-header, .card-sq .card-footer{
 	border-radius:0;
 }
@@ -351,82 +349,6 @@ button{
 	stroke-width: 2px;
 	fill-rule: evenodd;
 	stroke-linecap:round;
-}
-
-/* Horizontal Scroll Container */
-.blocs-horizontal-scroll-container{
-	position:relative;
-}
-.blocs-horizontal-scroll-area{
-	display:flex;
-	overflow-x:auto;
-	align-items:flex-start;
-	gap:20px;
-}
-.blocs-horizontal-scroll-area > *{
-	flex-shrink:0;
-	max-width:100%;
-}
-.blocs-horizontal-scroll-area::-webkit-scrollbar{
-	display:none;
-}
-.blocs-horizontal-scroll-control{
-	position:absolute;
-	top:50%;
-	transform:translateY(-50%);
-	z-index:1;
-	display:flex;
-	text-align:center;
-	border:0;
-	margin:0 30px;
-}
-.blocs-scroll-control-next{
-	right:0;
-}
-.blocs-round-btn{
-	background:rgba(0,0,0,0.15);
-	border-radius:100%;
-	padding:12px;
-	opacity:0;
-	cursor:pointer;
-	transform:scale(0.5);
-	backdrop-filter:blur(20px);
-	-webkit-backdrop-filter:blur(20px);
-	transition:opacity .50s ease,transform .50s ease;
-}
-.blocs-horizontal-scroll-container:hover .blocs-round-btn,.blocs-horizontal-scroll-container.show-controls .blocs-round-btn{
-	opacity:1;
-	transform:scale(1.0);
-}
-.blocs-round-btn:active{
-	background:rgba(0,0,0,0.3);
-	transform:scale(0.9)!important;
-	transition:transform .30s ease,background .50s ease;
-}
-.compact-blocs-controls .blocs-round-btn{
-	padding:2px;
-	width:30px;
-	height: 30px;
-}
-.compact-blocs-controls .blocs-round-btn svg{
-	width:14px;
-	height:14px;
-}
-.compact-blocs-controls .blocs-horizontal-scroll-control{
-	margin:0 20px;
-}
-.horizontal-scroll-icon{
-	fill:none;
-	stroke:#fff;
-	stroke-width:4px;
-	fill-rule:evenodd;
-	stroke-linecap:round;
-}
-.hide-left-control > .blocs-scroll-control-prev, .hide-right-control > .blocs-scroll-control-next{
-	opacity:0!important;
-}
-.show-controls > .blocs-scroll-control-prev, .show-controls > .blocs-scroll-control-next{
-	opacity:1!important;
 }
 
 /* = Custom Styling
@@ -610,9 +532,6 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 }
 .tc-458{
 	color:var(--swatch-var-458)!important;
-}
-.tc-4593{
-	color:var(--swatch-var-4593)!important;
 }
 
 /* Button colour styles */
